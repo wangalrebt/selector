@@ -1,0 +1,64 @@
+<div class="left_column">
+<%= form_for([@selector_url_test, @selector_css_test]) do |f| %>
+    <% if @selector_css_test.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@selector_css_test.errors.count, "error") %> prohibited this selector_css_test from being saved:</h2>
+
+          <ul>
+            <% @selector_css_test.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <div class="field">
+      <%= f.label :css %><br />
+      <%= f.text_field :css, :value => @css_selector || @selector_css_test.css %>
+      <input type="button" id="testArea" value="TEST">
+
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <table>
+      <th>CSS</th>
+      <% @selector_url_test.selector_css_tests.each do |selector_css_test| %>
+          <tr>
+            <td><%= selector_css_test.css %></td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>
+</div>
+
+<% if !(@url_address.nil? or @css_selector.nil?) %>
+    <div class="right_column">
+
+      <table>
+        <th style="font: 50px;">Test Contents</th>
+        <% contents = get_selector(@url_address, @css_selector)%>
+        <% contents.each do |record| %>
+            <tr>
+              <td style="border: groove;"><%= record.text %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+<% end %>
+
+<div style="clear: both;"></div>
+<script>
+    $(function(){
+        $('#testArea').click(function(){
+            var cssSelector = $('#selector_css_test_css').val();
+            if(cssSelector === "")
+                return false;
+            var urlAddress = "<%= @selector_url_test.url %>";
+
+            window.location.href = '?url=' + encodeURIComponent(urlAddress) + '&cssSelector=' + encodeURIComponent(cssSelector);
+
+        });
+    });
+</script>

@@ -1,0 +1,12 @@
+<% provide(:title, 'Home') %>
+<%= form_tag '/page/selector', :method => 'get' do %>
+    <div>
+      <%= label_tag :url, 'address' %>
+      <%= url_field_tag :url, "http://" %>
+    </div>
+    <div>
+      <%= label_tag :cssSelector, 'css' %>
+      <%= text_field_tag :cssSelector %>
+    </div>
+    <%= submit_tag "go" %>
+<% end %>

@@ -1,0 +1,21 @@
+<%= form_for(@selector_url_test) do |f| %>
+  <% if @selector_url_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@selector_url_test.errors.count, "error") %> prohibited this selector_url_test from being saved:</h2>
+
+      <ul>
+      <% @selector_url_test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

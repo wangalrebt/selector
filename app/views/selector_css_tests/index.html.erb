@@ -1,0 +1,24 @@
+<h1>Listing selector_css_tests</h1>
+
+<table>
+  <tr>
+    <th>Selector url test</th>
+    <th>Css</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @selector_css_tests.each do |selector_css_test| %>
+  <tr>
+    <td><%= selector_css_test.selector_url_test_id %></td>
+    <td><%= selector_css_test.css %></td>
+    <td><%= link_to 'Show', [@selector_url_test, selector_css_test] %></td>
+    <td><%= link_to 'Edit', edit_selector_url_test_selector_css_test_path(@selector_url_test,selector_css_test) %></td>
+    <td><%= link_to 'Destroy', [@selector_url_test, selector_css_test], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

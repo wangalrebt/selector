@@ -1,0 +1,19 @@
+<% provide(:title, 'Home') %>
+<%= form_tag '', :method => 'get' do %>
+    <div>
+      <%= label_tag :url, 'address' %>
+      <%= url_field_tag :url, @url_address %>
+    </div>
+    <div>
+      <%= label_tag :cssSelector, 'css' %>
+      <%= text_field_tag :cssSelector, @css_selector %>
+    </div>
+    <%= submit_tag "go" %>
+<% end %>
+<table>
+<% contents = get_selector(@url_address, @css_selector)%>
+<% contents.each do |record| %>
+    <tr><td><%= record.text %></td></tr>
+    <% end %>
+  </table>
+<div id="contents"></div>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @selector_url_test.url %>
+  <%= link_to 'Edit', edit_selector_url_test_path(@selector_url_test) %> |
+
+</p>
+<table>
+  <tr>
+    <th>Css</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%= link_to 'New Css Selector', new_selector_url_test_selector_css_test_path(@selector_url_test) %>
+
+  <% @selector_url_test.selector_css_tests.each do |selector_css_test| %>
+      <tr>
+        <td><%= selector_css_test.css %></td>
+        <td><%= link_to 'Edit', edit_selector_url_test_selector_css_test_path(@selector_url_test,selector_css_test) %></td>
+        <td><%= link_to 'Destroy', [@selector_url_test, selector_css_test], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= form_tag '', :method => 'get' do %>
+              <%= hidden_field_tag :url, @selector_url_test.url %>
+              <%= hidden_field_tag :cssSelector, selector_css_test.css %>
+              <%= submit_tag "go" %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+
+<% if !(@url_address.nil? or @css_selector.nil?) %>
+    <table>
+      <% contents = get_selector(@url_address, @css_selector)%>
+      <% contents.each do |record| %>
+          <tr>
+            <td><%= record.text %></td>
+          </tr>
+      <% end %>
+    </table>
+
+<% end %>

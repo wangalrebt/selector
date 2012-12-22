@@ -6,7 +6,7 @@
           <td class="url_text"><%= link_to selector_url_test.url, selector_url_test.url, :target => "_blank" %></td>
           <td></td>
           <td><%= link_to 'EDIT', edit_selector_url_test_path(selector_url_test) %> </td>
-          <td><%= link_to 'DELETE', selector_url_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'DELETE', selector_url_test, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
         </tr>
         <% selector_url_test.selector_css_tests.each do |selector_css_test| %>
             <tr>

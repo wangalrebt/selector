@@ -4,6 +4,8 @@ Selector::Application.routes.draw do
     resources :selector_css_tests
   end
 
+  root :to => 'selector_url_tests#index'
+
   match '/page', to: 'page#index'
   get "/page/selector"
   # The priority is based upon order of creation:

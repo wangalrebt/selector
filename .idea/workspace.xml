@@ -23,28 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
+      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="544" selection-end="544" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/application.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="41" selection-start="2780" selection-end="2780" vertical-scroll-proportion="0.8">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/selector_url_tests/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="13" selection-start="42" selection-end="42" vertical-scroll-proportion="-0.625">
+            <state line="6" column="39" selection-start="153" selection-end="153" vertical-scroll-proportion="0.13333334">
               <folding />
             </state>
           </provider>
@@ -60,7 +42,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_menubar.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/selector_url_tests.css.scss" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
@@ -76,6 +57,7 @@
         <option value="$PROJECT_DIR$/app/views/selector_url_tests/index.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/application.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -767,11 +749,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/selector_css_tests/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/selector_css_tests/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -827,13 +804,6 @@
         <state line="4" column="17" selection-start="159" selection-end="159" vertical-scroll-proportion="0.09846154" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/selector_url_tests/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="13" selection-start="42" selection-end="42" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -841,16 +811,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="544" selection-end="544" vertical-scroll-proportion="0.0">
+        <state line="58" column="41" selection-start="2780" selection-end="2780" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="41" selection-start="2780" selection-end="2780" vertical-scroll-proportion="0.8">
+        <state line="26" column="0" selection-start="544" selection-end="544" vertical-scroll-proportion="0.5777778">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/selector_url_tests/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="13" selection-start="42" selection-end="42" vertical-scroll-proportion="0.023510972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="39" selection-start="153" selection-end="153" vertical-scroll-proportion="0.13333334">
           <folding />
         </state>
       </provider>

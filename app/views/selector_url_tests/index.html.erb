@@ -1,40 +1,50 @@
 <% provide :title, 'Home' %>
-<div class="left_column">
-  <table>
-    <% @selector_url_tests.each do |selector_url_test| %>
-        <tr>
-          <td class="url_text"><%= link_to selector_url_test.url, selector_url_test.url, :target => "_blank" %></td>
-          <td></td>
-          <td><%= link_to 'EDIT', edit_selector_url_test_path(selector_url_test) %> </td>
-          <td><%= link_to 'DELETE', selector_url_test, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-        </tr>
-        <% selector_url_test.selector_css_tests.each do |selector_css_test| %>
-            <tr>
-              <td class="edit_text"><%= selector_css_test.css %></td>
-              <td><%= link_to 'EDIT', edit_selector_url_test_selector_css_test_path(selector_url_test,selector_css_test) %></td>
-              <td><%= link_to 'TEST', selector_url_tests_path(:url => selector_url_test.url, :cssSelector => selector_css_test.css) %></td>
-              <td><%= link_to 'DELETE', [selector_url_test, selector_css_test], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-        <% end %>
-        <tr>
-          <td><%= button_to 'NEW CSS', new_selector_url_test_selector_css_test_path(selector_url_test), :method => :get %></td>
-        </tr>
-    <% end %>
-  </table>
+
+<%= button_to "Save to DB", '/selector_url_tests/begin_work' %>
+<div class="row-fluid">
+  <div class="span6">
+    <table class="table">
+      <% @selector_url_tests.each do |selector_url_test| %>
+          <tr>
+            <td><%= link_to selector_url_test.url, selector_url_test.url, :target => "_blank" %></td>
+            <td></td>
+            <td><%= link_to 'EDIT', edit_selector_url_test_path(selector_url_test) %> </td>
+            <td><%= link_to 'DELETE', selector_url_test, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+          </tr>
+          <% selector_url_test.selector_css_tests.each do |selector_css_test| %>
+              <tr>
+                <td><%= selector_css_test.css %></td>
+                <td><%= selector_css_test.categories.category %></td>
+
+                <td><%= link_to 'EDIT', edit_selector_url_test_selector_css_test_path(selector_url_test,selector_css_test) %></td>
+                <td><%= link_to 'TEST', selector_url_tests_path(:cssSelector => selector_css_test) %></td>
+                <td><%= link_to 'DELETE', [selector_url_test, selector_css_test], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+          <tr>
+            <td><%= button_to 'NEW CSS', new_selector_url_test_selector_css_test_path(selector_url_test), :method => :get %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+
+
+  <% if !(params[:cssSelector].nil?) %>
+      <div class="span6">
+
+        <table class="table">
+          <th style="font: 50px;">Test Contents</th>
+          <% result = SelectorCssTest.get_url_css(params[:cssSelector]) %>
+          <% url = SelectorCssTest.find(params[:cssSelector]).selector_url_test.url %>
+          <% contents = get_selector(result["url"], result["css"])%>
+          <% contents.each do |record| %>
+              <tr>
+                <td><%= get_html(record, url) %></td>
+              </tr>
+          <% end %>
+        </table>
+      </div>
+  <% end %>
+
+
 </div>
-
-<% if !(@url_address.nil? or @css_selector.nil?) %>
-    <div class="right_column">
-
-      <table>
-        <th style="font: 50px;">Test Contents</th>
-        <% contents = get_selector(@url_address, @css_selector)%>
-        <% contents.each do |record| %>
-            <tr>
-              <td style="border: groove;"><%= record.text %></td>
-            </tr>
-        <% end %>
-      </table>
-    </div>
-<% end %>
-<div style="clear:both"></div>

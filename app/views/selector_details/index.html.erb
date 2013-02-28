@@ -1,0 +1,29 @@
+<h1>Listing selector_details</h1>
+<div class="row-fluid">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Headline</th>
+        <th>Link</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <% @selector_details.each do |selector_detail| %>
+          <tr>
+            <td><%= selector_detail.headline %></td>
+            <td><%= selector_detail.link %></td>
+            <td><%= selector_detail.create_at %></td>
+            <td><%= link_to 'Show', selector_detail %></td>
+            <td><%= link_to 'Edit', edit_selector_detail_path(selector_detail) %></td>
+            <td><%= link_to 'Destroy', selector_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>
+
+<%= link_to 'New Selector detail', new_selector_detail_path %>

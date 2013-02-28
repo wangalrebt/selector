@@ -4,8 +4,6 @@ class SelectorUrlTestsController < ApplicationController
   # GET /selector_url_tests.json
   def index
     @selector_url_tests = SelectorUrlTest.all
-   # @url_address = params[:url]
-   # @css_selector = params[:cssSelector]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -83,6 +81,17 @@ class SelectorUrlTestsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to selector_url_tests_url }
       format.json { head :no_content }
+    end
+  end
+
+  def begin_work
+    @selector_url_test = SelectorUrlTest.begin
+
+    respond_to do |format|
+      if @selector_url_test
+        format.html {redirect_to selector_details_url, notice: 'Save successful'}
+        format.json {head :no_content}
+      end
     end
   end
 

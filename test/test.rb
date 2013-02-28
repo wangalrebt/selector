@@ -1,16 +1,16 @@
 require 'nokogiri'
 require 'open-uri'
 
-address = 'http://www.bloomberg.com/'
-css_selector = '.news_item'
+address = 'http://www.reuters.com/article/2013/02/11/us-pope-resigns-idUSBRE91A0BH20130211'
+css_selector = 'h1'
 doc = Nokogiri::HTML(open(address))
 contents = Array.new
-count = 0
-doc.css(css_selector).each do |title|
-  contents[count] = title
-  count += 1
+
+title="Pope's sudden resignation sends shockwaves through Church"
+
+d = doc.search("[text()*=\"#{title}\"]")
+d[2].parent.children.each do |a|
+  puts a.attribute_nodes(), a.text
 end
 
-contents.each do |record|
-  puts record.child
-end
+

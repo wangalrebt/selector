@@ -1,6 +1,12 @@
 Selector::Application.routes.draw do
 
+  resources :selector_details
+
+
   resources :selector_url_tests do
+    collection do
+      post :begin_work
+    end
     resources :selector_css_tests
   end
 

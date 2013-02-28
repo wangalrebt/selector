@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Headline:</b>
+  <%= @selector_detail.headline %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @selector_detail.link %>
+</p>
+
+<p>
+  <b>Selector css:</b>
+  <%= @selector_detail.selector_css_id %>
+</p>
+<p>
+  <b>Abstract: </b>
+  <%= ab_test(@selector_detail.link) %>
+</p>
+<%= link_to 'Edit', edit_selector_detail_path(@selector_detail) %> |
+<%= link_to 'Back', selector_details_path %>

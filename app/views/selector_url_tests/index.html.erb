@@ -14,7 +14,7 @@
           <% selector_url_test.selector_css_tests.each do |selector_css_test| %>
               <tr>
                 <td><%= selector_css_test.css %></td>
-                <td><%= selector_css_test.categories.category unless selector_css_test.nil? %></td>
+                <td><%= selector_css_test.categories.category unless selector_css_test.categories.nil? %></td>
 
                 <td><%= link_to 'EDIT', edit_selector_url_test_selector_css_test_path(selector_url_test,selector_css_test) %></td>
                 <td><%= link_to 'TEST', selector_url_tests_path(:cssSelector => selector_css_test) %></td>

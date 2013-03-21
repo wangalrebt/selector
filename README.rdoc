@@ -1,3 +1,5 @@
-This project will search web page and parsing content according to css, 
-for example: in www.bloomberg.com 
-css:#top_headlines_module .black is the css path for bloomberg top headline. we can use this css selector to parsing the link and title in the web page and save the informations to our database.
+==This project will search web page and parsing content according to css 
+like in http://www.bloomberg.com
+
+css:#top_headlines_module .black is the css path for bloomberg top headline. 
+We can use this css selector to parsing the link and title in the web page and save the informations to our database.
